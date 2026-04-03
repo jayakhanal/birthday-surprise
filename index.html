@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Sister 🎂</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="background-icons" aria-hidden="true">
+  <span class="bg-icon music">♪</span>
+  <span class="bg-icon music">♫</span>
+  <span class="bg-icon music">♬</span>
+  <span class="bg-icon flower">❀</span>
+  <span class="bg-icon flower">✿</span>
+  <span class="bg-icon flower">✾</span>
+</div>
+
+
+<div class="container">
+  <h1>🎉 Happy Birthday Didi<br>
+      Many Many Happy Returns of the Day...<br>
+      Always want to see a happy and healthy you<br>
+      ...Have a wonderful day 🎉</h1>
+
+  <img src="image1.jpeg" class="main-photo"><br><br>
+
+  <!-- Start Button -->
+  <button id="startBtn" onclick="startSurprises()">Click for Magic ✨</button>
+
+  <!-- Surprise Container -->
+  <div id="surprise-container" class="hidden">
+
+    <!-- Buttons side by side -->
+    <div class="button-row">
+      <button onclick="showContent('surprise1')">💝 Click for Message</button>
+      <button onclick="showContent('surprise2')">🌟 See  Memories Together</button>
+      <button onclick="showContent('surprise3')">💖 Special Message</button>
+      <button onclick="showContent('surprise4')">👶 See Motherhood Journey</button>
+      <button onclick="showContent('surprise5')">🎂 Cake & Gift for You</button>
+      <button onclick="showContent('surprise6')">🤣 Funny Quiz</button>
+    </div>
+
+    <!-- Surprise Contents -->
+    <div id="surprise1" class="surprise-content hidden">
+      <p id="typedMessage1" class="love-message"></p>
+    </div>
+
+    <div id="surprise2" class="surprise-content hidden">
+      <div class="carousel">
+        <div class="slides">
+          <div class="slide"><img src="Both.jpg"><p class="caption">Duiti fuchee haru 🌸</p></div>
+          <div class="slide"><img src="Image 2.jpg"><p class="caption">Our first trip 🌸</p></div>
+          <div class="slide"><img src="Image 3.jpg"><p class="caption">Birthday fun 🎉</p></div>
+          <div class="slide"><img src="Image 4.jpg"><p class="caption">Silly moments 🌳</p></div>
+          <div class="slide"><img src="Image5.jpg"><p class="caption">Park Day 😂</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="surprise3" class="surprise-content hidden">
+      <p id="typedMessage3" class="love-message"></p>
+      <p>💌 Thank you for always being amazing.Your Support, guidance are mean for me  </p>
+    </div>
+
+    <div id="surprise4" class="surprise-content hidden">
+      <div class="carousel">
+        <div class="slides">
+          <div class="slide"><img src="Sanju.jpg"><p class="caption">Sano Bela ko Sanju 💕</p></div>
+          <div class="slide"><img src="child1.jpeg"><p class="caption">Meri Pyari Sani Sanju 💕</p></div>
+          <div class="slide"><img src="child2.jpeg"><p class="caption">Little One 🌸</p></div>
+          <div class="slide"><img src="Motherhood.jpeg"><p class="caption">Beautiful Mother 💖</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="surprise5" class="surprise-content hidden">
+      <h2>🎂 Happy Birthday Cake! 🎂</h2>
+      <div class="cake-gallery">
+        <img src="cake1.jpeg" alt="Birthday Cake 1" class="cake-img">
+        <!-- <img src="cake2.jpeg" alt="Birthday Cake 2" class="cake-img">
+        <img src="cake3.avif" alt="Birthday Cake 3" class="cake-img"> -->
+      </div>
+      <div class="gift-message">
+        <p>🎁 This is my gift for you: A lifetime of happiness, love, and endless memories! 💖</p>
+        <p>You deserve all the joy in the world, my amazing sister! 🌟</p>
+        <button id="special-surprise-btn" onclick="startSuspense()">🎉 Click for Special Surprise! 🎉</button>
+      </div>
+      <div id="suspense-container" class="hidden">
+        <div class="suspense-animation">
+          <h2>🤫 Suspense... 🤫</h2>
+          <div class="countdown">3</div>
+        </div>
+      </div>
+      <div id="special-message" class="hidden">
+        <h2>🎂 Happy Birthday, My Dear Sister! 🎂</h2>
+        <p>You are the most amazing person I know! Your smile lights up my world, your laughter is contagious, and your love is unconditional. Here's to many more years of adventures, memories, and joy together! I love you more than words can say! 💖🌟</p>
+        <p>Forever your loving sibling! ❤️</p>
+      </div>
+    </div>
+
+    <div id="surprise6" class="surprise-content hidden">
+      <h2>🤣 Funny Birthday Quiz! 🤣</h2>
+      <div id="quiz-container">
+        <div id="question-container">
+          <p id="question">Question will appear here</p>
+          <div id="options">
+            <button class="option-btn" onclick="checkAnswer(0)">Option 1</button>
+            <button class="option-btn" onclick="checkAnswer(1)">Option 2</button>
+            <button class="option-btn" onclick="checkAnswer(2)">Option 3</button>
+            <button class="option-btn" onclick="checkAnswer(3)">Option 4</button>
+          </div>
+        </div>
+        <div id="result" class="hidden">
+          <p id="result-text"></p>
+          <button onclick="nextQuestion()">Next Question</button>
+        </div>
+        <div id="final-score" class="hidden">
+          <p id="score-text"></p>
+          <button onclick="restartQuiz()">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Floating hearts -->
+<div id="hearts"></div>
+
+<!-- Confetti canvas -->
+<canvas id="confetti"></canvas>
+
+<!-- Music Player -->
+<div class="music-player">
+  <button id="music-toggle" onclick="toggleMusic()">🎵 Play Music</button>
+</div>
+
+<audio id="backgroundMusic" autoplay loop>
+  <source src="Audio.mp4" type="audio/mpeg">
+  <source src="Audio.wav" type="audio/wav">
+  <source src="Audio.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
